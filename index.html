@@ -1,0 +1,22 @@
+{% extends "base.html" %} 
+{% block content %} 
+<a href="/add">Add User</a> 
+<table border="1" cellpadding="10"> 
+<tr> 
+<th>ID</th> 
+<th>Name</th> 
+<th>Role</th> 
+<th>Action</th> 
+</tr> 
+{% for user in users %} 
+<tr> 
+<td>{{ user.id }}</td> 
+<td>{{ user.name }}</td> 
+<td>{{ user.role }}</td> 
+<td> 
+<a href="/delete/{{ user.id }}">Delete</a> 
+</td> 
+</tr> 
+{% endfor %} 
+</table> 
+{% endblock %}
